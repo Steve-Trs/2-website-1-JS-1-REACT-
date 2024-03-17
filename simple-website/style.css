@@ -1,0 +1,337 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+  background-color: #000000;
+  color: white;
+}
+.navbar {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  background-color: #000000;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  height: 100px;
+  width: auto;
+  margin-left: 20px;
+}
+.navlinks {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  margin: 0;
+}
+
+.navlink {
+  flex-grow: 1;
+  text-align: center;
+  color: antiquewhite;
+  text-decoration: none;
+  font-size: 26px;
+  height: 70%;
+  line-height: 70px;
+}
+.navlink:hover {
+  background-color: antiquewhite;
+  color: rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.burger-menu {
+  position: fixed;
+  z-index: 10;
+  top: 35px;
+  right: 30px;
+  border: none;
+  width: 40px;
+  height: 30px;
+  outline: none;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+}
+.line {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: antiquewhite;
+  transition: transform 0.3s ease-out;
+  border: 1px solid antiquewhite;
+  border-radius: 10px;
+}
+.l1 {
+  transform: translateY(-10px);
+}
+
+.l3 {
+  transform: translateY(10px);
+}
+
+.burger-menu.active .l1 {
+  transform: translateY(0px) rotate(135deg);
+}
+.burger-menu.active .l3 {
+  transform: translateY(0px) rotate(-135deg);
+}
+.burger-menu.active .l2 {
+  opacity: 0;
+}
+.sidebar {
+  display: none;
+}
+.section {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+.about,
+.experience {
+  height: 100vh;
+  padding-top: 100px;
+}
+.hobbies {
+  padding-top: 100px;
+}
+/*                                                               */
+/* -----------------------------ABOUT--------------------------- */
+/*                                                               */
+
+.title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 20px auto;
+}
+.container {
+  max-width: 90%;
+  height: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+.separator {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto 20px auto;
+}
+.picture {
+  width: 250px;
+  border: 5px solid hsl(0, 0%, 80%);
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.text {
+  width: 60%;
+}
+
+/*                                                               */
+/* ---------------------------EXPERIENCE------------------------ */
+/*                                                               */
+
+.carousel-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 20px auto;
+}
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 80%;
+  height: 450px;
+}
+.card {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid hsl(0, 0%, 90%);
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 60%;
+  margin: 0 auto;
+  max-height: 100%;
+  background-color: #f2f2f2;
+  box-shadow: 0 5px 5px hsl(0, 0%, 70%);
+}
+.card.active {
+  display: flex;
+}
+.card-img img {
+  width: 120px;
+  height: 120px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  margin: 20px auto;
+  box-shadow: 0 5px 5px hsl(0, 0%, 70%);
+}
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.card-text {
+  text-align: inherit;
+  min-width: 60%;
+  font-size: 1.1rem;
+  padding: 5px 10px;
+  background-color: white;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  box-shadow: 0 5px 5px hsl(0, 0%, 70%);
+}
+
+.left-arrow {
+  top: 50%;
+  left: 0;
+}
+.right-arrow {
+  top: 50%;
+  right: 0;
+}
+.right-arrow,
+.left-arrow {
+  position: absolute;
+  background-color: hsl(0, 0%, 66%);
+  border-radius: 50%;
+  padding: 5px;
+  color: #f2f2f2;
+  font-weight: bold;
+  font-size: 30px;
+
+  box-shadow: 0 5px 5px hsl(0, 0%, 50%);
+}
+.left-arrow:hover,
+.right-arrow:hover {
+  cursor: pointer;
+  background-color: hsl(0, 0%, 56%);
+}
+/*                                                               */
+/* ---------------------------HOBBIES--------------------------- */
+/*                                                               */
+.hobbies-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  background-image: url("assets/laptop.webp");
+  background-size: cover;
+  background-position: center;
+}
+.hobby-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 2px 2px hsl(0, 0%, 90%);
+}
+.text-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+.hobby-text {
+  color: white;
+  text-align: center;
+}
+
+/*                                                               */
+/* ---------------------------MOBILE VIEW----------------------- */
+/*                                                               */
+@media screen and (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navlink {
+    display: none;
+  }
+  .sidebar {
+    position: fixed;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    height: 0px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 900;
+    border-top: 1px solid antiquewhite;
+  }
+  .sidebar.active {
+    display: flex;
+    width: 100%;
+    height: 250px;
+    transition: height 0.3s ease;
+  }
+  .sidebar-link {
+    width: 150px;
+    text-decoration: none;
+    font-size: 26px;
+    padding: 20px 0;
+    color: antiquewhite;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 20;
+  }
+  .sidebar-link:hover {
+    background-color: antiquewhite;
+    color: rgb(0, 0, 0);
+  }
+  .text {
+    width: 100%;
+  }
+
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+}
